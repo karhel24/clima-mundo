@@ -23,11 +23,12 @@ let getInfo = async(direccion) => {
     try {
 
         let place = await lugar.getLugarLatLng(direccion);
+        //console.log(place);
         let temperatura = await clima.getCLima(place.lat, place.lng);
 
-        return `El clima en ${place} es de ${temperatura}`;
+        return `El clima en ${place.direccion} es de ${temperatura}ºC`;
     } catch (error) {
-        return `No se pudo determinar el clime en ${direccion}`;
+        return `No se pudo determinar el clima en ${direccion}`;
     }
 
 }

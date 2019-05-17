@@ -3,10 +3,11 @@ const axios = require('axios');
 
 const getCLima = async(lat, lng) => {
 
-    let resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}
-    &appid=b6907d289e10d714a6e88b30761fae22`);
+    //console.log(lat, lng);
+    let resp = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=32f843d833c38373032f825c4a92418a&units=metric`);
 
-    return resp.main.temp;
+    //console.log(resp.data.main.temp);
+    return resp.data.main.temp;
 }
 
 module.exports = {
